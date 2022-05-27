@@ -1,0 +1,22 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  .navigation-links-container {
+    display: flex;
+    align-items: center;
+
+    li {
+      margin: 0 25px;
+
+      a {
+        &:hover {
+          color: red;
+          transition: 0.2s ease-out;
+        }
+      }
+    }
+  }
+}
