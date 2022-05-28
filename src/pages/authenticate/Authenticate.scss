@@ -1,0 +1,23 @@
+.authenticate-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+
+  .input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+    span {
+      height: 20px;
+    }
+
+    input {
+      border: none;
+      border-bottom: 2px solid gray;
+      height: 40px;
+      font-size: 18px;
+    }
+  }
+}

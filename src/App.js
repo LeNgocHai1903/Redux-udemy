@@ -1,15 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 
-import { Navigation } from "./container/Navigation/Navigation";
-import { HomePage } from "./pages/HomePage/HomePage";
-import { SignIn } from "./pages/Authenticate/Sign-in/Sign-in";
+import { Navigation } from "./container/navigation/Navigation";
+import { HomePage } from "./pages/home-page/HomePage";
+import { Authentication } from "./pages/authenticate/Authenticate";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<HomePage />} />
-        <Route path="sign-in" element={<SignIn />} />
+        <Route path="sign-in" element={<Authentication />} />
       </Route>
     </Routes>
   );

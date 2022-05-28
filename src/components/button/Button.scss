@@ -1,0 +1,27 @@
+.button-container {
+  border: none;
+  width: fit-content;
+  padding: 13px 40px;
+  background-color: black;
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.google-sign-in {
+    background-color: rgb(105, 186, 218);
+  }
+
+  &.inverted {
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    transition: 0.3s all;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}

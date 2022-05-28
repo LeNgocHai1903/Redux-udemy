@@ -1,0 +1,13 @@
+.sign-in-container {
+  width: 40%;
+
+  input {
+    background-color: rgb(227, 233, 235);
+  }
+
+  .button-group-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+}
