@@ -2,8 +2,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import {
   signInWithGooglePopUp,
-  createUserDocument,
-  createAuthWithEmailAndPassword,
+  signInAuthWithEmailAndPassword,
 } from "../../../utils/firebase/firebase";
 
 import { Button } from "../../../components/button/Button";
@@ -25,21 +24,27 @@ export const SignIn = () => {
       .required("Required"),
   });
 
-  // const logGoogleUser = async () => {
-  //   const { user } = await signInWithGooglePopUp();
-  //   createUserDocument(user);
-  // };
+  const signInwithGoogle = async () => {
+    await signInWithGooglePopUp();
+  };
 
   const onSignInSubmitHandler = async (event, values, actions) => {
-    // event.preventDefault();
-    // try {
-    //   const { user } = await createAuthWithEmailAndPassword(
-    //     values.email,
-    //     values.password
-    //   );
-    // } catch (e) {
-    //   console.log(e);
-    // }
+    event.preventDefault();
+    try {
+      await signInAuthWithEmailAndPassword(values.email, values.password);
+    } catch (e) {
+      switch (e.code) {
+        case "auth/wrong-password":
+          alert("Incorrect password for email");
+          break;
+        case "auth/user-not-found":
+          alert("No user associated with this email");
+          break;
+
+        default:
+          console.log(e);
+      }
+    }
   };
   return (
     <Formik
@@ -85,7 +90,11 @@ export const SignIn = () => {
 
           <div className="button-group-container">
             <Button type="submit"> SIGN IN </Button>
-            <Button buttonType="google">
+            <Button
+              type="button"
+              buttonType="google"
+              onClick={signInwithGoogle}
+            >
               SIGN IN WITH GOOGLE
             </Button>
           </div>
