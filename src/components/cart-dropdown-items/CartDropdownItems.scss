@@ -1,0 +1,13 @@
+.cart-dropdown-item-container {
+  height: 110px;
+  display: flex;
+  align-items: center;
+
+  .cart-dropdown-item-image {
+    height: 100px;
+    width: 70px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 10px;
+  }
+}

@@ -28,5 +28,11 @@
     "name": "Card",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIXvJh1aWk6FMIUxkxLKZ2C2MOBkL6w3R8sqx0syuP1Y2K9MGWcfVyiRtTQKo-XxxMsRI&usqp=CAU",
     "price": "29"
+  },
+  {
+    "id": 6,
+    "name": "Card",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIXvJh1aWk6FMIUxkxLKZ2C2MOBkL6w3R8sqx0syuP1Y2K9MGWcfVyiRtTQKo-XxxMsRI&usqp=CAU",
+    "price": "29"
   }
 ]

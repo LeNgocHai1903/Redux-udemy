@@ -5,7 +5,6 @@ import { ReactComponent as CrownLogo } from "../../assets/images/crown.svg";
 
 import { UserContext } from "../../context/user";
 import { CartContext } from "../../context/cart";
-
 import { signOutAuth } from "../../utils/firebase/firebase";
 
 import { CartIcon } from "../cart-icon/CartIcon";
