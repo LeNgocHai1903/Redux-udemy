@@ -8,33 +8,37 @@ export const CartContext = createContext({
   deleteItemInCart: () => {},
 });
 
-const changeQuantityCartItem = (cartItems, productToAdd, type) => {
+const changeQuantityCartItem = (cartItems, productToDelete, type) => {
   const existingCartItem = cartItems.find(
-    (cartItem) => cartItem.id === productToAdd.id
+    (cartItem) => cartItem.id === productToDelete.id
   );
 
   if (existingCartItem) {
     switch (type) {
       case "increase":
         return cartItems.map((cart) =>
-          cart.id === productToAdd.id
+          cart.id === productToDelete.id
             ? { ...cart, quantity: cart.quantity + 1 }
             : cart
         );
 
       case "decrease":
-        return cartItems.map((cart) =>
-          cart.id === productToAdd.id
-            ? { ...cart, quantity: cart.quantity - 1 }
-            : cart
-        );
+        if (productToDelete.quantity === 1) {
+          return cartItems.filter((item) => item.id !== productToDelete.id);
+        } else {
+          return cartItems.map((cart) =>
+            cart.id === productToDelete.id
+              ? { ...cart, quantity: cart.quantity - 1 }
+              : cart
+          );
+        }
 
       default:
         break;
     }
   }
 
-  return [...cartItems, { ...productToAdd, quantity: 1 }];
+  return [...cartItems, { ...productToDelete, quantity: 1 }];
 };
 
 const deleteItemFromCart = (cartItems, productToDelete) => {
